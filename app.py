@@ -37,25 +37,40 @@ def analyze():
     img = Image.open(filepath)
 
     prompt = """
-    Look at this meal image.
+    Analyze this meal image.
 
-    Tell me:
-    1. Food name
-    2. Estimated calories
-    3. Protein
-    4. Carbohydrates
-    5. Fat
+    Return the result exactly like this:
 
-    Keep the answer short and easy to read.
+    🍛 Food:
+    ...
+
+    🔥 Estimated Calories:
+    ...
+
+    💪 Protein:
+    ...
+
+    🍚 Carbohydrates:
+    ...
+
+    🥑 Fat:
+    ...
+
+    ⭐ Health Score:
+    ...
+
+    💡 Healthy Suggestion:
+    ...
+
+    Keep the response concise and user friendly.
     """
 
     response = model.generate_content([prompt, img])
 
-    return f"""
-    <h1>🍎 AI Analysis</h1>
-    <pre>{response.text}</pre>
-    """
-
+    return render_template(
+        "result.html",
+        result=response.text
+    )
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,0 +1,46 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analysis Result</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="glass-card">
+
+    <div class="logo">
+        🍽️
+    </div>
+
+    <h1>Meal Analysis</h1>
+
+    <div style="
+background:rgba(255,255,255,.12);
+padding:30px;
+border-radius:20px;
+margin-top:20px;
+text-align:left;
+white-space:pre-wrap;
+line-height:2;
+font-size:18px;
+overflow-wrap:break-word;
+">
+        {{ result }}
+    </div>
+
+    <br><br>
+
+    <a href="/" style="text-decoration:none;">
+        <button class="analyze-btn">
+            🔄 Analyze Another Meal
+        </button>
+    </a>
+
+</div>
+
+</body>
+</html>
+

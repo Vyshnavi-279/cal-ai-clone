@@ -1,32 +1,67 @@
+```html
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cal AI Clone</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-    <h1>🍎 Cal AI Clone</h1>
+<div class="background"></div>
 
-    <p>Upload your meal image.</p>
+<div class="glass-card">
+
+    <div class="logo">
+        🍎
+    </div>
+
+    <h1>Cal AI Clone</h1>
+
+    <p class="subtitle">
+        Snap your meal and get instant AI-powered
+        calorie and nutrition analysis.
+    </p>
 
     <form action="/analyze"
           method="POST"
           enctype="multipart/form-data">
 
-        <input type="file"
-               name="food_image"
-               required>
+        <label class="upload-area">
 
-        <br><br>
+            <input type="file"
+                   name="food_image"
+                   required>
 
-        <button type="submit">
-            Analyze Meal
+            <span class="upload-icon">📸</span>
+
+            <span class="upload-text">
+                Choose a Meal Photo
+            </span>
+
+            <small>
+                JPG, PNG, WEBP
+            </small>
+
+        </label>
+
+        <button class="analyze-btn" type="submit">
+            ✨ Analyze Meal
         </button>
 
     </form>
 
-</body>
+    <div class="powered">
+        Powered by Gemini AI • Flask • Python
+    </div>
 
+</div>
+
+</body>
 </html>
+```
+

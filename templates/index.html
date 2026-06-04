@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cal AI Clone</title>
+</head>
+
+<body>
+
+    <h1>🍎 Cal AI Clone</h1>
+
+    <p>Upload your meal image.</p>
+
+    <form action="/analyze"
+          method="POST"
+          enctype="multipart/form-data">
+
+        <input type="file"
+               name="food_image"
+               required>
+
+        <br><br>
+
+        <button type="submit">
+            Analyze Meal
+        </button>
+
+    </form>
+
+</body>
+
+</html>
